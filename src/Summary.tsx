@@ -16,10 +16,14 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: "white",
   },
+  
 });
 const Summary: React.FC = () => {
   return (
     <div>
+
+
+
       <View style={styles.tableHeader}>
         <Text style={styles.headerText}> DISCHARGE SUMMARY</Text>
         <View style={{ flex: 1 }}></View>

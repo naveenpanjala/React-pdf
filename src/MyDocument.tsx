@@ -112,7 +112,8 @@ const MyDocument = () => (
                   <Image
                     style={styles.image}
                     source={{
-                      uri: "sumatran-tiger-on-log-free-photo.jpg",
+                      uri: "I DO.jpg",
+                      
                     }}
                   />
                 </View>
