@@ -155,10 +155,21 @@ const alerts = [
   { slNo: 2, time: "10:30 AM", temp: "39.2°C", alert: "High Fever" },
   { slNo: 3, time: "02:15 PM", temp: "37.8°C", alert: "Normal" },
   { slNo: 4, time: "04:45 PM", temp: "38.9°C", alert: "Fever" },
-  
+  { slNo: 1, time: "09:00 AM", temp: "38.5°C", alert: "Fever" },
+  { slNo: 2, time: "10:30 AM", temp: "39.2°C", alert: "High Fever" },
+  { slNo: 3, time: "02:15 PM", temp: "37.8°C", alert: "Normal" },
+  { slNo: 4, time: "04:45 PM", temp: "38.9°C", alert: "Fever" },
+  { slNo: 1, time: "09:00 AM", temp: "38.5°C", alert: "Fever" },
+  { slNo: 2, time: "10:30 AM", temp: "39.2°C", alert: "High Fever" },
+  { slNo: 3, time: "02:15 PM", temp: "37.8°C", alert: "Normal" },
+  { slNo: 4, time: "04:45 PM", temp: "38.9°C", alert: "Fever" },
+   { slNo: 1, time: "09:00 AM", temp: "38.5°C", alert: "Fever" },
+
 ];
 
 const Vitals: React.FC = () => {
+  const firstTableAlerts = alerts.slice(0, 13);
+  const remainingAlerts = alerts.slice(13);
   return (
     <div>
       <View style={styles.tableHeader}>
@@ -267,34 +278,62 @@ const Vitals: React.FC = () => {
           </View>
         </View>
       </View>
-      <View style={styles.alertTable}>
-        <View style={{ marginBottom: 10 }}>
-          <Text>Alert</Text>
-        </View>
-        <View style={styles.alertTableRow}>
-          <Text style={[styles.alertTableHeader, styles.alertTableCell]}>
-            SL.No
-          </Text>
-          <Text style={[styles.alertTableHeader, styles.alertTableCell]}>
-            Time
-          </Text>
-          <Text style={[styles.alertTableHeader, styles.alertTableCell]}>
-            Temp
-          </Text>
-          <Text style={[styles.alertTableHeader, styles.alertTableCell]}>
-            Alert
-          </Text>
-        </View>
-        {alerts.map((alert, index) => (
-          <View style={styles.alertTableRow} key={index}>
-            <Text style={styles.alertTableCell}>{alert.slNo}</Text>
-            <Text style={styles.alertTableCell}>{alert.time}</Text>
-            <Text style={styles.alertTableCell}>{alert.temp}</Text>
-            <Text style={styles.alertTableCell}>{alert.alert}</Text>
+      <View>
+        <View style={styles.alertTable}>
+          <View style={styles.alertTableRow}>
+            <Text style={[styles.alertTableHeader, styles.alertTableCell]}>
+              SL.No
+            </Text>
+            <Text style={[styles.alertTableHeader, styles.alertTableCell]}>
+              Time
+            </Text>
+            <Text style={[styles.alertTableHeader, styles.alertTableCell]}>
+              Temp
+            </Text>
+            <Text style={[styles.alertTableHeader, styles.alertTableCell]}>
+              Alert
+            </Text>
           </View>
-        ))}
+          {firstTableAlerts.map((alert, index) => (
+            <View style={styles.alertTableRow} key={index}>
+              <Text style={styles.alertTableCell}>{alert.slNo}</Text>
+              <Text style={styles.alertTableCell}>{alert.time}</Text>
+              <Text style={styles.alertTableCell}>{alert.temp}</Text>
+              <Text style={styles.alertTableCell}>{alert.alert}</Text>
+            </View>
+          ))}
+        </View>
       </View>
+      {remainingAlerts.length > 0 && (
+        <View >
+          <View style={styles.alertTable}>
+            <View style={styles.alertTableRow}>
+              <Text style={[styles.alertTableHeader, styles.alertTableCell]}>
+                SL.No
+              </Text>
+              <Text style={[styles.alertTableHeader, styles.alertTableCell]}>
+                Time
+              </Text>
+              <Text style={[styles.alertTableHeader, styles.alertTableCell]}>
+                Temp
+              </Text>
+              <Text style={[styles.alertTableHeader, styles.alertTableCell]}>
+                Alert
+              </Text>
+            </View>
+            {remainingAlerts.map((alert, index) => (
+              <View style={styles.alertTableRow} key={index}>
+                <Text style={styles.alertTableCell}>{alert.slNo}</Text>
+                <Text style={styles.alertTableCell}>{alert.time}</Text>
+                <Text style={styles.alertTableCell}>{alert.temp}</Text>
+                <Text style={styles.alertTableCell}>{alert.alert}</Text>
+              </View>
+            ))}
+          </View>
+        </View>
+      )}
     </div>
   );
 };
 export default Vitals;
+

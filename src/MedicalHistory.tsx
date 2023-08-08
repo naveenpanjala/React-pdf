@@ -18,63 +18,104 @@ const styles = StyleSheet.create({
     backgroundColor: "#d9fffc",
     borderRadius: 20,
     padding: 10,
-    height: 100,
+    width: "auto",
+    height: 130,
   },
   container2: {
-    marginLeft: 20,
+    marginLeft: 10,
     marginTop: 20,
     flexDirection: "row",
     backgroundColor: "#faeede",
     borderRadius: 20,
     padding: 10,
-    height: 100,
+    width: "auto",
+    height: 130,
   },
   container3: {
-    marginLeft: 20,
+    marginLeft: 10,
     marginTop: 20,
     backgroundColor: "#f5e4f3",
     borderRadius: 20,
     padding: 10,
-    width: 240,
-    height: 100,
+    width: 220,
+    height: "auto",
   },
   container4: {
+    alignItems: "flex-start",
     marginTop: 10,
-    flexDirection: "row",
+    // flexDirection: "row",
     backgroundColor: "#faeede",
     borderRadius: 20,
     padding: 10,
-    width: 220,
-    height: 200,
+    width: 250,
+    // width: "auto",
+    height: "auto",
   },
   container5: {
+    alignItems: "flex-start",
     marginTop: 10,
-    flexDirection: "row",
+    // flexDirection: "row",
     backgroundColor: "#faeede",
     borderRadius: 20,
     marginLeft: 10,
     padding: 10,
     width: 220,
-    height: 200,
+    height: "auto",
   },
   container6: {
     marginTop: 10,
-    flexDirection: "row",
+    // flexDirection: "row",
+    // alignItems: "flex-start",
     backgroundColor: "#d9fffc",
     borderRadius: 20,
     padding: 10,
-    width: 220,
-    height: 120,
+    width: 250,
+    height: "auto",
   },
   container7: {
     marginTop: 10,
     marginLeft: 10,
-    flexDirection: "row",
+    // flexDirection: "row",
     backgroundColor: "#f5e4f3",
     borderRadius: 20,
     padding: 10,
     width: 220,
-    height: 120,
+    height: "auto",
+  },
+  container8: {
+    alignItems: "flex-start",
+    marginTop: 10,
+    // flexDirection: "row",
+    backgroundColor: "#d9fffc",
+    borderRadius: 20,
+    padding: 10,
+    width: 250,
+    // width: "auto",
+    height: "auto",
+  },
+  container9: {
+    alignItems: "flex-start",
+    marginTop: 10,
+    marginLeft: 10,
+    // flexDirection: "row",
+    backgroundColor: "#e1faf8",
+    borderRadius: 20,
+    padding: 10,
+    width: 220,
+    // width: "auto",
+    height: 100,
+  },
+  container10: {
+    alignItems: "flex-start",
+    marginTop: 10,
+    marginLeft: 10,
+    // flexDirection: "row",
+    backgroundColor: "#e1faf8",
+    borderRadius: 20,
+    padding: 10,
+    width: 220,
+    // width: "auto",
+    height: 100,
   },
 
 
@@ -122,8 +163,55 @@ const medicineList = [
   "Medicine C",
   "Medicine D",
   "Medicine E",
+  "Medicine A",
+  "Medicine B",
+  "Medicine C",
+  "Medicine D",
+  "Medicine E",
+  "Medicine A",
+  "Medicine B",
+  "Medicine C",
+  "Medicine D",
+  "Medicine E",
+  "Medicine A",
+  "Medicine B",
+  "Medicine C",
+  "Medicine D",
+  "Medicine E",
 ];
-const foodList = ["Fruits", "Vegetables", "Grains"];
+const medicineList1 = [
+  "Medicine A",
+  "Medicine B",
+  "Medicine C",
+  "Medicine D",
+  "Medicine E",
+  "Medicine A",
+  "Medicine B",
+  "Medicine C",
+  "Medicine D",
+  "Medicine E",
+  "Medicine A",
+];
+const foodList = [
+  "Apple",
+  "Banana",
+  "Orange",
+  "Grapes",
+  "Strawberry",
+  "Watermelon",
+  "Pineapple",
+  "Mango",
+  "Kiwi",
+  "Peach"
+];
+
+const knownConditions = [
+  "Diabetes",
+  "Laparoscopic Surgery",
+  "Diabetes",
+  "Laparoscopic Surgery",
+  "Diabetes",
+];
 
 const MedicalHistory: React.FC = () => {
   return (
@@ -160,20 +248,18 @@ const MedicalHistory: React.FC = () => {
         <Text style={{ width: 120 }}>Father</Text>
       </View>
       <View style={styles.greyline}></View>
-      <View
-        style={{ flexDirection: "row", alignItems: "center", marginLeft: 60 }}
-      >
+      <View style={{ flexDirection: "row", marginLeft: 60 }}>
         <View style={styles.container}>
           <View>
             <Image src={BloodIcon} />
-            <Text style={{ fontSize: 10, marginTop: 10 }}>Blood Group</Text>
+            <Text style={{ fontSize: 10 }}>Blood Group</Text>
           </View>
         </View>
 
         <View style={styles.container2}>
           <View>
             <Image src={bloodpresserIcon} />
-            <Text style={{ fontSize: 10, marginTop: 10 }}>Blood Pressure</Text>
+            <Text style={{ fontSize: 10 }}>Blood Pressure</Text>
           </View>
         </View>
         <View style={styles.container3}>
@@ -183,42 +269,37 @@ const MedicalHistory: React.FC = () => {
               Any Surgeries/Known Conditions In The Past?
             </Text>
           </View>
-          <View>
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                marginTop: 10,
-              }}
-            >
-              <Text style={styles.bullet}>•</Text>
-              <Text style={{ fontSize: 10 }}>Diabetes</Text>
-            </View>
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Text style={styles.bullet}>•</Text>
-              <Text style={{ fontSize: 10 }}>Laparoscopic Surgery</Text>
-            </View>
+          <View style={{ marginTop: 10 }}>
+            {knownConditions.map((condition, index) => (
+              <View
+                style={{ flexDirection: "row", alignItems: "center" }}
+                key={index}
+              >
+                <Text style={styles.bullet}>•</Text>
+                <Text style={{ fontSize: 10 }}>{condition}</Text>
+              </View>
+            ))}
           </View>
         </View>
       </View>
 
-      <View
-        style={{ flexDirection: "row", alignItems: "center", marginLeft: 60 }}
-      >
+      <View style={{ flexDirection: "row", marginLeft: 60 }}>
         <View style={styles.container4}>
-          <View style={{ flexDirection: "row" }}>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Image style={styles.icon} src={tabletsIcon} />
             <Text style={{ fontSize: 10, marginTop: 5 }}>
               Taking Any Prescribed Medicines
             </Text>
           </View>
-
-          <View style={{ marginTop: 30, marginRight: 100 }}>
+          <View style={{ marginTop: 10 }}>
             {medicineList.map((medicine, index) => (
-              <Text key={index}>
+              <View
+                style={{ flexDirection: "row", alignItems: "center" }}
+                key={index}
+              >
                 <Text style={styles.bullet}>•</Text>
                 <Text style={{ fontSize: 10 }}>{medicine}</Text>
-              </Text>
+              </View>
             ))}
           </View>
         </View>
@@ -230,7 +311,7 @@ const MedicalHistory: React.FC = () => {
             </Text>
           </View>
           <View style={{ flexDirection: "row", marginRight: 100 }}>
-            <View style={{ fontSize: 10, marginTop: 20 }}>
+            <View style={{ fontSize: 10, marginTop: 10 }}>
               <Text>Food</Text>
               {foodList.map((food, index) => (
                 <View
@@ -242,7 +323,7 @@ const MedicalHistory: React.FC = () => {
                 </View>
               ))}
               <Text style={{ marginTop: 10 }}>Medicine</Text>
-              {medicineList.map((medicine, index) => (
+              {medicineList1.map((medicine, index) => (
                 <View
                   key={index}
                   style={{ flexDirection: "row", alignItems: "center" }}
@@ -326,7 +407,95 @@ const MedicalHistory: React.FC = () => {
         </View>
       </View>
 
-    
+      {/* <View
+        style={{ flexDirection: "row", marginLeft: 60 }}
+      >
+        <View style={styles.container8}>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <Text style={{ fontSize: 10 }}>Other Health Conditions</Text>
+          </View>
+          <View style={{ marginTop: 20 }}>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Image style={styles.icon} src={brainIcon} />
+              <Text style={{ fontSize: 10 }}>
+                Epilepsy or Neurological disorder?
+              </Text>
+            </View>
+            <View style={{ flexDirection: "row", alignItems: "center",marginTop: 20 }}>
+              <Image style={styles.icon} src={headIcon} />
+              <Text style={{ fontSize: 10 }}>
+              Any Mental Health Problems?
+              </Text>
+            </View>
+            <View style={{ flexDirection: "row", alignItems: "center" ,marginTop: 20}}>
+              <Image style={styles.icon} src={chestIcon} />
+              <Text style={{ fontSize: 10 }}>
+              Chest
+              </Text>
+            </View>
+            <View style={{ flexDirection: "row", alignItems: "center",marginTop: 20 }}>
+              <Image style={styles.icon} src={heartIcon} />
+              <Text style={{ fontSize: 10 }}>
+              Heart
+              </Text>
+            </View>
+            <View style={{ flexDirection: "row", alignItems: "center",marginTop: 20 }}>
+              <Image style={styles.icon} src={boneIcon} />
+              <Text style={{ fontSize: 10 }}>
+              Any bone/Joint Disease?
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View style={styles.container9}>
+        <View>
+            <Text style={{ fontSize: 10, marginTop: 5 }}>
+              Any Known Diseases In Family?
+            </Text>
+            <View
+              style={{
+                marginTop: 20,
+                flexDirection: "row",
+                alignItems: "flex-end",
+              }}
+            >
+              <View style={{ marginRight: 10 }}>
+                <Image style={styles.icon2} src={tobacoIcon} />
+                <Text style={{ fontSize: 10, textAlign: "center" }}>
+                  Tobacco
+                </Text>
+              </View>
+              <View style={{ marginRight: 10 }}>
+                <Image style={styles.icon2} src={drugIcon} />
+                <Text style={{ fontSize: 10, textAlign: "center" }}>
+                  Drugs
+                </Text>
+              </View>
+              <View>
+                <Image style={styles.icon2} src={alcoholIcon} />
+                <Text style={{ fontSize: 10, textAlign: "center" }}>
+                  Alcohol
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={{ flexDirection: "row", marginLeft: 60 }}
+      >
+          <View style={styles.container10}>
+              <View>
+              <Text style={{ marginTop: 5 }}>
+              Lumps Found?
+            </Text>
+              </View>
+              <View>
+              <Image style={styles.icon2} src={lumpsIcon} />
+              </View>
+          </View>
+
+        </View> */}
     </div>
   );
 };
