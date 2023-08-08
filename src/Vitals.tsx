@@ -155,15 +155,6 @@ const alerts = [
   { slNo: 2, time: "10:30 AM", temp: "39.2°C", alert: "High Fever" },
   { slNo: 3, time: "02:15 PM", temp: "37.8°C", alert: "Normal" },
   { slNo: 4, time: "04:45 PM", temp: "38.9°C", alert: "Fever" },
-  { slNo: 1, time: "09:00 AM", temp: "38.5°C", alert: "Fever" },
-  { slNo: 2, time: "10:30 AM", temp: "39.2°C", alert: "High Fever" },
-  { slNo: 3, time: "02:15 PM", temp: "37.8°C", alert: "Normal" },
-  { slNo: 4, time: "04:45 PM", temp: "38.9°C", alert: "Fever" },
-  { slNo: 1, time: "09:00 AM", temp: "38.5°C", alert: "Fever" },
-  { slNo: 2, time: "10:30 AM", temp: "39.2°C", alert: "High Fever" },
-  { slNo: 3, time: "02:15 PM", temp: "37.8°C", alert: "Normal" },
-  { slNo: 4, time: "04:45 PM", temp: "38.9°C", alert: "Fever" },
-   { slNo: 1, time: "09:00 AM", temp: "38.5°C", alert: "Fever" },
 
 ];
 
